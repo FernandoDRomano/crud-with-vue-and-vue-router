@@ -7,7 +7,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    redirect: 'list-todos'
+    redirect: '/todos'
   },
   {
     path: '/todos',
