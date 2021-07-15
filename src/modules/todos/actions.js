@@ -60,11 +60,12 @@ export async function updateTodo({commit, dispatch}, payload){
 
 export async function updateStatusTodo({commit, dispatch}, payload){
     try {
+        console.log('updateStatusTodo', payload)
         await Vue.axios({
             url: `/todos/${payload.id}`,
             method: 'PATCH',
             data:{
-                status: payload.status,
+                status: !payload.status,
             }            
         })
 

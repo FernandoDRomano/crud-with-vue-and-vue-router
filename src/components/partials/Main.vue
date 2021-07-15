@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto min-h-screen my-4">
+    <div class="container mx-auto min-h-screen py-4 bg-gray-200">
         <router-view></router-view>
     </div>
 </template>
