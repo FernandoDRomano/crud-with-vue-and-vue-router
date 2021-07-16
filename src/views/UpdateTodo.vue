@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="text-3xl text-center font-bold mb-4">Editar Tarea</h2>
+        <h2 class="text-xl md:text-2xl lg:text-3xl text-center font-bold mb-2 md:mb-4">Editar Tarea</h2>
         <form-todo :todo="todo" button="Editar Tarea" @processForm="processForm"></form-todo>
     </div>
 </template>
