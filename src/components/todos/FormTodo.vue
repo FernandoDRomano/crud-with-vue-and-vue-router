@@ -32,10 +32,6 @@
             {{ button }}
         </button>
 
-        <pre>
-            required: {{$v.todo.text.required}}
-            minLength: {{$v.todo.text.minLength}}
-        </pre>
     </form>
 </template>
 

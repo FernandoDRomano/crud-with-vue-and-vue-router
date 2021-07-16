@@ -7,3 +7,5 @@
 }
 
 @tailwind utilities;
+
+@import './animations/transitions.css'
