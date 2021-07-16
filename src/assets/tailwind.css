@@ -2,4 +2,8 @@
 
 @tailwind components;
 
+.active-class{
+    @apply bg-green-300 text-black;
+}
+
 @tailwind utilities;
