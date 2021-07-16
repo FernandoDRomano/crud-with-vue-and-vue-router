@@ -57,7 +57,6 @@
         props:{
             todo:{
                 type: Object,
-                required: true
             },
             button:{
                 type: String,

@@ -13,6 +13,19 @@ export async function setTodos({commit}){
     }
 }
 
+export async function getTodo({commit}, payload){
+    try {
+        const {data} = await Vue.axios({
+            method: 'GET',
+            url: `todos/${payload}`
+        })
+
+        commit('setTodo', data);
+    } catch (e) {
+        commit('setError', e.message)
+    }
+}
+
 export async function addTodo({commit, dispatch}, payload){
     try { 
         await Vue.axios({
@@ -62,7 +75,6 @@ export async function updateTodo({commit, dispatch}, payload){
 
 export async function updateStatusTodo({commit, dispatch}, payload){
     try {
-        console.log('updateStatusTodo', payload)
         await Vue.axios({
             url: `/todos/${payload.id}`,
             method: 'PATCH',

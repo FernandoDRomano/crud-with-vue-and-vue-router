@@ -2,7 +2,7 @@
     <li class="flex items-center justify-between w-11/12 mx-auto py-2 border-b-2 border-gray-400 mb-1 px-2">
         <p class="text-base">{{todo.text}}</p>
         <div class="flex">
-            <button class="flex items-center mr-1">
+            <button @click="showViewUpdateTodo" class="flex items-center mr-1">
                 <svg class="w-6 h-6 fill-current text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
             </button>
             <button @click="_updateStatusTodo(todo)" class="flex items-center mr-1" v-if="todo.status">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-    import {mapActions} from 'vuex'
+    import {mapActions, mapMutations} from 'vuex'
 
     export default {
         name: 'ItemTodo',
@@ -39,7 +39,20 @@
             ...mapActions({
                 _updateStatusTodo: 'todos/updateStatusTodo',
                 _deleteTodo: 'todos/deleteTodo'
-            })
+            }),
+            ...mapMutations({
+                _setTodo: 'todos/setTodo'
+            }),
+            showViewUpdateTodo(){
+                this._setTodo(this.todo);
+
+                this.$router.push({
+                    name: 'update-todo',
+                    params: {
+                        id: this.todo.id
+                    }
+                })
+            }
         }
     }
 </script>
