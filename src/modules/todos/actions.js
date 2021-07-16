@@ -13,7 +13,7 @@ export async function setTodos({commit}){
     }
 }
 
-export async function addTodo({commit}, payload){
+export async function addTodo({commit, dispatch}, payload){
     try { 
         await Vue.axios({
             url: '/todos',
@@ -24,6 +24,8 @@ export async function addTodo({commit}, payload){
                 status: false
             }
         })
+
+        dispatch('setTodos')
     } catch (e) {
         commit('setError', e.message)
     }

@@ -2,8 +2,8 @@
     <div>
         <h2 class="text-3xl text-center font-bold mb-4">Listado de Tareas</h2>
         <div class="grid grid-cols-1 md:grid-cols-2">
-            <list-todos :todos="_complete" title="Tareas Pendientes"></list-todos>
-            <list-todos :todos="_incomplete" title="Tareas Finalizadas"></list-todos>
+            <list-todos :todos="_incomplete" title="Tareas Pendientes"></list-todos>
+            <list-todos :todos="_complete" title="Tareas Finalizadas"></list-todos>
         </div>
     </div>
 </template>

@@ -1,15 +1,35 @@
 <template>
     <div>
-        Crear tarea
+        <h2 class="text-3xl text-center font-bold mb-4">Crear Nueva Tarea</h2>
+        <form-todo :todo="todo" button="Crear Tarea" @processForm="processForm"></form-todo>
     </div>
 </template>
 
 <script>
+    import FormTodo from '@/components/todos/FormTodo.vue'
+    import {mapActions} from 'vuex'
     export default {
-        name: 'CreateTodo'
+        name: 'CreateTodo',
+        data(){
+            return{
+                todo:{
+                    text: ''
+                }
+            }
+        },
+        components:{
+            FormTodo
+        },
+        methods:{
+            ...mapActions({
+                _addTodo: 'todos/addTodo'
+            }),
+            processForm(todo){
+                this._addTodo(todo)
+                this.$router.push({
+                    name: 'list-todos'
+                })
+            }
+        }
     }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
