@@ -1,4 +1,6 @@
-# crud-con-vue-router
+# Example of crud with vue
+
+CRUD using vue, vue router, vuex, tailwind and localstorage for save data
 
 ## Project setup
 ```
@@ -15,5 +17,5 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Demo
+[Click Here :laughing:](https://crud-vue-with-vuex-vuerouter-tailwind-and-localstorage.netlify.app/).
