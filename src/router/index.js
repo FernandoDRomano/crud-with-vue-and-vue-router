@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -22,7 +23,21 @@ const routes = [
   {
     path: '/:id/update',
     name: 'update-todo',
-    component: () => import(/* webpackChunkName: "update-todo-view" */ '../views/UpdateTodoView.vue')
+    component: () => import(/* webpackChunkName: "update-todo-view" */ '../views/UpdateTodoView.vue'),
+    beforeEnter(to, from, next){
+      const todo = store.state.todos.todos.find(e => e.id === to.params.id)
+
+      if(!todo){
+        next({name: 'NotFound', params: { '0': to.path } })
+      }
+
+      next()
+    }
+  },
+  {
+    path: '*', 
+    name: 'NotFound', 
+    component: () => import(/* webpackChunkName: "error-404-view */ '../views/Error404View.vue')
   }
 ]
 
