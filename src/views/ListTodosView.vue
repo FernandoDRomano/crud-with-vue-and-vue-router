@@ -11,8 +11,9 @@
 <script>
     import ListTodos from '@/components/todos/ListTodos.vue'
     import {mapGetters, mapActions} from 'vuex'
+    
     export default {
-        name: 'ListTodosPage',
+        name: 'ListTodosView',
         components:{
             ListTodos
         },

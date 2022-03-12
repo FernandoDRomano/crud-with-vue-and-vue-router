@@ -12,17 +12,17 @@ const routes = [
   {
     path: '/todos',
     name: 'list-todos',
-    component: () => import(/* webpackChunkName: "list-todos" */ '../views/ListTodos.vue')
+    component: () => import(/* webpackChunkName: "list-todos-view" */ '../views/ListTodosView.vue')
   },
   {
     path: '/create',
     name: 'create-todo',
-    component: () => import(/* webpackChunkName: "create-todo" */ '../views/CreateTodo.vue')
+    component: () => import(/* webpackChunkName: "create-todo-view" */ '../views/CreateTodoView.vue')
   },
   {
     path: '/:id/update',
     name: 'update-todo',
-    component: () => import(/* webpackChunkName: "update-todo" */ '../views/UpdateTodo.vue')
+    component: () => import(/* webpackChunkName: "update-todo-view" */ '../views/UpdateTodoView.vue')
   }
 ]
 

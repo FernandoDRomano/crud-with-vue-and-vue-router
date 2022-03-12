@@ -8,8 +8,9 @@
 <script>
     import FormTodo from '@/components/todos/FormTodo.vue'
     import {mapActions} from 'vuex'
+
     export default {
-        name: 'CreateTodo',
+        name: 'CreateTodoView',
         data(){
             return{
                 todo:{

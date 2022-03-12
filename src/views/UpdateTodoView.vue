@@ -8,8 +8,9 @@
 <script>
     import FormTodo from '@/components/todos/FormTodo.vue'
     import {mapActions, mapState} from 'vuex'
+    
     export default {
-        name: 'UpdateTodo',
+        name: 'UpdateTodoView',
         data(){
             return{
                 todo: null
